@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
-
+using namespace std; 
 class   MyHeap{
     //private:
     public: //Dejar todo público para poder revisar atributos
