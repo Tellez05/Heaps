@@ -19,11 +19,11 @@ void MyHeap::push(int n){
         for(int i {0}; i < nuevo_tamano; i++){
             values[i] = borrar[i];
         }
-        this->values[size] = n;  
-        size++; 
+        delete borrar; 
     }
     this->values[size] = n; 
     size++; 
+ 
 }
 
 bool MyHeap::isEmpty(){

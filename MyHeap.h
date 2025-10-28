@@ -7,7 +7,7 @@ class   MyHeap{
     public: //Dejar todo público para poder revisar atributos
         int* values; //Arreglo donde se van a guardar los valores del HEAP
         int size;    //Representa cuantos valores tiene almacenado el Heap
-       int len;    //Representa el tamaño o capacidad máxima actual del arreglo
+        int len;    //Representa el tamaño o capacidad máxima actual del arreglo
     //public:
         MyHeap();//Inicializa el los atributos. El atributo values lo inicializa como un arreglo vacío tamaño de 7.
         MyHeap(int* valores,int size); //Conviert el arreglo en un heap. Lo deja del mismo tamaño que tiene el arreglo
