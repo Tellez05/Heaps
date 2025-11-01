@@ -8,8 +8,8 @@ class   MyHeap{
         int* values; //Arreglo donde se van a guardar los valores del HEAP
         int size;    //Representa cuantos valores tiene almacenado el Heap
         int len;    //Representa el tamaño o capacidad máxima actual del arreglo
-        void revisarPushR(int n); 
-        void swap(int n1, int n2); 
+        void revisarPushR(int n); // Hace la revision en recursivo
+        void swap(int n1, int n2); // Hace el swap de 2 valores
     //public:
         MyHeap();//Inicializa el los atributos. El atributo values lo inicializa como un arreglo vacío tamaño de 7.
         MyHeap(int* valores,int size); //Conviert el arreglo en un heap. Lo deja del mismo tamaño que tiene el arreglo
@@ -23,5 +23,5 @@ class   MyHeap{
         bool isEmpty();//regresa true si el heap está vacío caso contrario regresa false
         int length();//regresa cuántos elementos están almacenando el heap. OJO: NO EL TAMAÑO
         void imprimir();//Imprime los atributos del heap. Debe ser la implementación que se muestra abajo. No cambiar nada.
-        void revisarPush(); 
+        void revisarPush(); //Primer ciclo para luego la
 };      

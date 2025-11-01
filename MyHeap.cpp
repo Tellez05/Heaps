@@ -7,10 +7,12 @@ MyHeap::MyHeap(){
 }
 
 MyHeap::MyHeap(int* valores, int size ){
-    this->size = size; 
-    this->values = new int [size];
+    this->size = 0; 
+    this->len = size;
+    this->values = new int[size];
+
     for(int i {0}; i<size; i++){
-        this->values[i] =  valores[i];
+        push(valores[i]); 
     }
 }
 

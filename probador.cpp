@@ -1,22 +1,12 @@
 #include "MyHeap.h"
 
 int main() {
-    MyHeap h;
+    int arr[] = {40, 10, 90, 30, 50, 5, 70, 20, 60, 100};
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    cout << "Insertando valores y mostrando el heap:\n";
+    MyHeap heap(arr, n);
 
-    h.push(50);
-    h.push(30);
-    h.push(60);
-    h.push(10);
-    h.push(80);
-    h.push(20);
-    h.push(90);
-    h.push(55);
-    h.push(5);
-    h.push(100);
-
-    h.imprimir(); 
+    heap.imprimir(); // tu función ya lo imprime
 
     return 0;
 }
