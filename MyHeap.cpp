@@ -7,7 +7,11 @@ MyHeap::MyHeap(){
 }
 
 MyHeap::MyHeap(int* valores, int size ){
-
+    this->size = size; 
+    this->values = new int [size];
+    for(int i {0}; i<size; i++){
+        this->values[i] =  valores[i];
+    }
 }
 
 void MyHeap::push(int n){
@@ -19,11 +23,40 @@ void MyHeap::push(int n){
         for(int i {0}; i < nuevo_tamano; i++){
             values[i] = borrar[i];
         }
-        delete borrar; 
+        delete[] borrar; 
     }
     this->values[size] = n; 
+    revisarPush();
     size++; 
  
+}
+void MyHeap::revisarPush(){
+    int index {size}; 
+    if(index == 0 ){
+        return;
+    }
+    int n {(index-1)/2};
+    if((this->values[index] > this->values[n])){
+        swap(index, n);
+        revisarPushR(n); 
+    }
+}   
+
+void MyHeap::revisarPushR(int N){
+    if(N == 0){
+        return; 
+    }
+    int n {(N-1)/2};
+    if((this->values[N] > this->values[n])){
+        swap(N, n);
+        revisarPushR(n); 
+    }
+}
+
+void MyHeap::swap(int n1, int n2){
+    int temp = this->values[n1];
+    this->values[n1] = this->values[n2];
+    this->values[n2] = temp;
 }
 
 bool MyHeap::isEmpty(){
