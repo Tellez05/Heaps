@@ -70,7 +70,8 @@ void MyHeap::pop(){
         values[i] = values[i+1];
     }
     size--; 
-    MyHeap(values, size); 
+
+
 }
 
 int MyHeap::top(){
@@ -87,4 +88,19 @@ void MyHeap::imprimir(){
         cout<<values[i]<<",";
     }
     cout<<endl;
+}
+
+void MyHeap::revisarPop(){
+    if(size == 0){
+        return; 
+    }
+    if(this->values[1] > this->values[0]){
+        swap(1,0);
+    }
+
+}
+
+
+void MyHeap::revisarPopR(int n){
+    
 }
