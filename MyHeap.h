@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 #include <vector>
-using namespace std; 
+using namespace std;
+//Profe los comentarios los pondre en el .cpp para no quitar estos comentarios 
 class   MyHeap{
     //private:
     public: //Dejar todo público para poder revisar atributos
@@ -12,6 +13,7 @@ class   MyHeap{
         void revisarPopR(int n); // Igual hace la recursion en la verificacion del pop
         void swap(int n1, int n2); // Hace el swap de 2 valores
     //public:
+        ~MyHeap(); 
         MyHeap();//Inicializa el los atributos. El atributo values lo inicializa como un arreglo vacío tamaño de 7.
         MyHeap(int* valores,int size); //Conviert el arreglo en un heap. Lo deja del mismo tamaño que tiene el arreglo
         void push(int n); //Inserta un valor en el heap. Sólo cuando el nuevo valor no cabe en el arreglo
