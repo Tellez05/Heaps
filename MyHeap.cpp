@@ -65,14 +65,7 @@ bool MyHeap::isEmpty(){
     return size==0; 
 }
 
-void MyHeap::pop(){
-    for(int i {0}; i<size; i++){
-        values[i] = values[i+1];
-    }
-    size--; 
 
-
-}
 
 int MyHeap::top(){
     return values[0];
@@ -90,17 +83,71 @@ void MyHeap::imprimir(){
     cout<<endl;
 }
 
+void MyHeap::pop(){
+    values[0] = values[size-1];
+    size--; 
+    revisarPop(); 
+}
+
 void MyHeap::revisarPop(){
-    if(size == 0){
+    bool cont {values[1]<values[2]};
+    if(size<2){
         return; 
     }
-    if(this->values[1] > this->values[0]){
-        swap(1,0);
+    if(size<3){
+        if(values[0]<values[1]){
+            swap(0,1);
+            
+        }
+        return;
     }
-
+    if(!cont){
+        if(values[0]<values[1]){
+            swap(0,1);
+            revisarPopR(1);           
+        }
+        return;
+    }else{
+        if(values[0]<values[2]){
+            swap(0,2);
+            revisarPopR(2);
+            
+        }
+        return;
+    }
 }
 
 
 void MyHeap::revisarPopR(int n){
-    
+    if(size<=n){
+        return; 
+    }
+    int izquierda {(n*2)+1};
+    int derecha {(n*2)+1};
+
+    if(size<=izquierda){
+        return;
+    }
+    if(size<= derecha){
+        if(values[n]< values[derecha]){
+            swap(izquierda, n);
+            revisarPopR(izquierda); 
+             
+        }
+        return; 
+    }
+
+    bool cont {values[izquierda] < values[derecha]};
+    if(!cont){
+        if(values[n] < values[izquierda]){
+            swap(n,izquierda);
+            revisarPopR(izquierda);
+        }else{
+            if(values[n]< values[derecha]){
+                swap(n,derecha);
+                revisarPopR(derecha);
+            }
+        }
+    }
+
 }

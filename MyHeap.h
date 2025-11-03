@@ -9,7 +9,7 @@ class   MyHeap{
         int size;    //Representa cuantos valores tiene almacenado el Heap
         int len;    //Representa el tamaño o capacidad máxima actual del arreglo
         void revisarPushR(int n); // Hace la revision en recursivo
-        void revisarPopR(int n); 
+        void revisarPopR(int n); // Igual hace la recursion en la verificacion del pop
         void swap(int n1, int n2); // Hace el swap de 2 valores
     //public:
         MyHeap();//Inicializa el los atributos. El atributo values lo inicializa como un arreglo vacío tamaño de 7.
@@ -25,6 +25,6 @@ class   MyHeap{
         int length();//regresa cuántos elementos están almacenando el heap. OJO: NO EL TAMAÑO
         void imprimir();//Imprime los atributos del heap. Debe ser la implementación que se muestra abajo. No cambiar nada.
         void revisarPush(); //Primer ciclo para luego la recursion
-        void revisarPop(); 
+        void revisarPop();//Revisa que el pop quede bien 
 
 };      
